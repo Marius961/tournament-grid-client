@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700,800&display=swap&subset=cyrillic,cyrillic-ext");
+html > body {
+  background: #404040;
+  color: white;
+  font-family: 'Open Sans', sans-serif; }
+
+.t-btn {
+  transition: all .2s;
+  border: 0;
+  padding: 8px 16px;
+  background: #303030;
+  color: white;
+  border-radius: 4px; }
+  .t-btn:disabled {
+    background: #7a7a7a;
+    color: #b9b9b9; }
+    .t-btn:disabled:hover {
+      background: #7a7a7a;
+      color: #b9b9b9; }
+
+.t-btn-primary {
+  transition: all .2s;
+  border: 0;
+  padding: 8px 16px;
+  background: #303030;
+  color: white;
+  border-radius: 4px;
+  background: #ff7324; }
+  .t-btn-primary:disabled {
+    background: #7a7a7a;
+    color: #b9b9b9; }
+    .t-btn-primary:disabled:hover {
+      background: #7a7a7a;
+      color: #b9b9b9; }
+  .t-btn-primary:hover {
+    background: #aa4d18; }

@@ -1,0 +1,12 @@
+.grid-wrapper {
+  min-width: 1000px;
+  padding: 0 26px; }
+
+.t-stage {
+  padding: 0 26px; }
+
+.t-match {
+  background: #262626;
+  margin-top: 26px;
+  margin-bottom: 6px;
+  padding: 10px 12px; }

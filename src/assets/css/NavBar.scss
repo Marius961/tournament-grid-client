@@ -1,0 +1,40 @@
+@import "mixins";
+@import "vars";
+
+$navBarHeight: 46px;
+
+nav {
+  background: $secondaryColor;
+  max-height: $navBarHeight;
+  height: $navBarHeight;
+}
+
+.n-link {
+  border-right: 1px solid #282828;
+  height: $navBarHeight;
+  line-height: $navBarHeight;
+  @include userSelectNone;
+  font-weight: bold;
+  border-radius: 6px 6px 0 0;
+
+  &:hover {
+    background: $bgColor;
+    cursor: pointer;
+  }
+
+  img {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.n-logo {
+  &:hover {
+    background: inherit;
+  }
+}
+
+.n-link-active {
+  color: $accentColor;
+  background: $bgColor;
+}

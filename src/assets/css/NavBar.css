@@ -1,0 +1,27 @@
+nav {
+  background: #1a1a1d;
+  max-height: 46px;
+  height: 46px; }
+
+.n-link {
+  border-right: 1px solid #282828;
+  height: 46px;
+  line-height: 46px;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  font-weight: bold;
+  border-radius: 6px 6px 0 0; }
+  .n-link:hover {
+    background: #404040;
+    cursor: pointer; }
+  .n-link img {
+    width: 32px;
+    height: 32px; }
+
+.n-logo:hover {
+  background: inherit; }
+
+.n-link-active {
+  color: #ff7324;
+  background: #404040; }
