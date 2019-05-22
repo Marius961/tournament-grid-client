@@ -1,8 +1,12 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700,800&display=swap&subset=cyrillic,cyrillic-ext");
+html {
+  height: 100%; }
+
 html > body {
   background: #404040;
   color: white;
-  font-family: 'Open Sans', sans-serif; }
+  font-family: 'Open Sans', sans-serif;
+  height: 100%; }
 
 .t-btn {
   transition: all .2s;
@@ -34,3 +38,22 @@ html > body {
       color: #b9b9b9; }
   .t-btn-primary:hover {
     background: #aa4d18; }
+
+::-webkit-scrollbar {
+  height: 15px; }
+
+::-webkit-scrollbar-thumb {
+  background: #ff7324;
+  border-radius: 10px; }
+
+::-webkit-scrollbar-thumb:hover {
+  background: #aa4d18; }
+
+.h-body {
+  background-image: url("../img/bgImg.jpg");
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: auto;
+  background-position: center; }

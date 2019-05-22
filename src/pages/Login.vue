@@ -1,6 +1,6 @@
 <template>
     <form @submit.prevent="submitLoginForm()" class="row justify-content-center auth-form">
-        <div class="col-4">
+        <div class="col-12 col-md-4">
             <div class="row no-gutters">
                 <h1 class="col-12 m-0 text-center">Вхід</h1>
                 <div class="col-12 t-form">
@@ -9,9 +9,9 @@
                 </div>
                 <div class="col-12 t-form">
                     <label for="password"></label>
-                    <input v-model="$v.user.password.$model" type="text" id="password">
+                    <input v-model="$v.user.password.$model" type="password" id="password">
                 </div>
-                <button :disabled="$v.$invalid" class="col-3 mt-4 t-btn t-btn-primary">Увійти</button>
+                <button :disabled="$v.$invalid" class="col-12 col-md-4 mt-4 t-btn t-btn-primary">Увійти</button>
             </div>
         </div>
     </form>

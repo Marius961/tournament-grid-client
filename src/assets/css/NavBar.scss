@@ -14,6 +14,7 @@ nav {
   height: $navBarHeight;
   line-height: $navBarHeight;
   @include userSelectNone;
+  vertical-align: middle;
   font-weight: bold;
   border-radius: 6px 6px 0 0;
 
@@ -37,4 +38,12 @@ nav {
 .n-link-active {
   color: $accentColor;
   background: $bgColor;
+}
+
+
+.nav-action {
+  i {
+    margin-top: 12px;
+    font-size: 25px;
+  }
 }

@@ -4,7 +4,7 @@
             <div class="row grid-2 align-items-center">
                 <div class="col-auto stage" v-for="stageWithMatches in stagesWithMatches" :key="'tStage' + stageWithMatches.stage.id">
                     <div class="row no-gutters">
-                        <h4>{{stageWithMatches.stage.name}}</h4>
+                        <h4 class="col-12 align-self-start">{{stageWithMatches.stage.name}}</h4>
                         <match :match-data="match" v-for="match in stageWithMatches.matches" :key="'match' + match.id"></match>
                     </div>
                 </div>

@@ -1,6 +1,7 @@
 <template>
     <div class="row">
         <tournament
+                @deleteTournament="deleteTournamntFronList"
                 class="col-12"
                 :tournament="tournament"
                 v-for="tournament in tournaments"
@@ -53,6 +54,10 @@
             },
             setPagination(pageData) {
                 this.pages = PaginationService.generatePagination(pageData, this.$route.query, "/tournaments")
+            },
+            deleteTournamntFronList(id) {
+                const index = this.tournaments.findIndex(el => el.id === id);
+                this.tournaments.splice(index, 1);
             }
         },
         created() {

@@ -1,20 +1,18 @@
 .tournament {
   margin: 6px 30px;
-  background: #1a1a1d;
-  padding: 20px 18px; }
+  background: #1a1a1d; }
 
 .grid-wrapper {
   margin-top: 22px;
   padding-top: 18px;
-  padding-bottom: 18px;
-  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#45484d+0,45484d+6,45484d+6,45484d+12,45484d+12,000000+100 */
   background: #45484d;
-  /* Old browsers */
   background: -moz-linear-gradient(left, #45484d 0%, #45484d 6%, #45484d 6%, #45484d 12%, #45484d 12%, #000000 100%);
-  /* FF3.6-15 */
   background: -webkit-linear-gradient(left, #45484d 0%, #45484d 6%, #45484d 6%, #45484d 12%, #45484d 12%, #000000 100%);
-  /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to right, #45484d 0%, #45484d 6%, #45484d 6%, #45484d 12%, #45484d 12%, #000000 100%);
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', endColorstr='#000000',GradientType=1 );
-  /* IE6-9 */ }
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', endColorstr='#000000',GradientType=1 ); }
+
+@media all and (max-width: 568px) {
+  .tournament {
+    margin: 6px 0; } }
+.actions-bar {
+  background: #272727; }

@@ -10,6 +10,7 @@ nav {
   -moz-user-select: none;
   -webkit-user-select: none;
   user-select: none;
+  vertical-align: middle;
   font-weight: bold;
   border-radius: 6px 6px 0 0; }
   .n-link:hover {
@@ -25,3 +26,7 @@ nav {
 .n-link-active {
   color: #ff7324;
   background: #404040; }
+
+.nav-action i {
+  margin-top: 12px;
+  font-size: 25px; }

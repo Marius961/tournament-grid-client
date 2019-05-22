@@ -13,7 +13,10 @@ const router = new Router({
     routes: [
         {
             path: '/',
-            component: Home
+            component: Home,
+            meta: {
+                bodyClass: 'h-body'
+            }
         },
         {
             path: '/tournaments',

@@ -21,22 +21,22 @@ $matchHeight: 70px;
     }
     &:nth-child(3) {
       .match {
-        margin-top: $matchHeight * 1.84;
-        margin-bottom: $matchHeight * 1.84;
+        margin-top: $matchHeight * 1.83;
+        margin-bottom: $matchHeight * 1.83;
       }
     }
 
     &:nth-child(4) {
       .match {
-        margin-top: $matchHeight * 4.2;
-        margin-bottom: $matchHeight * 4.2;
+        margin-top: $matchHeight * 4.16;
+        margin-bottom: $matchHeight * 4.16;
       }
     }
 
     &:nth-child(5) {
       .match {
-        margin-top: $matchHeight * 8.4;
-        margin-bottom: $matchHeight * 8.4;
+        margin-top: $matchHeight * 8.8;
+        margin-bottom: $matchHeight * 8.8;
       }
     }
     .match {
@@ -49,8 +49,6 @@ $matchHeight: 70px;
       padding-left: 15px;
       background: black;
       border-bottom: 1px solid #b4b4b4;
-      overflow: hidden;
-
 
       .result, .result:disabled {
         background: #2f2f2f;

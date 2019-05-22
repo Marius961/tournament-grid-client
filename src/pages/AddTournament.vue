@@ -2,31 +2,31 @@
     <form @submit.prevent="submitForm()" class="row justify-content-center t-form">
         <h1 class="col-auto mb-0">Додати турнір</h1>
         <div class="w-100"></div>
-        <div class="col-6 t-form">
+        <div class="col-12 col-md-6 t-form">
             <label for="name">Назва турніру</label>
             <input v-model="tournament.name" type="text" id="name">
         </div>
         <div class="w-100"></div>
-        <div class="col-6 t-form">
+        <div class="col-12 col-md-6 t-form">
             <label for="location">Місце проведення</label>
             <input v-model="tournament.location" type="text" id="location">
         </div>
         <div class="w-100"></div>
-        <div class="col-3 t-form">
+        <div class="col-12 col-md-3 t-form">
             <label for="startDate">Дата початку</label>
             <input v-model="tournament.startDate" type="datetime-local" id="startDate">
         </div>
-        <div class="col-3 t-form">
+        <div class="col-12 col-md-3 t-form">
             <label for="endDate">Дата закінчення</label>
             <input v-model="tournament.endDate" type="datetime-local" id="endDate">
         </div>
         <div class="w-100"></div>
-        <div class="col-6 t-form">
-            <label for="description">Місце проведення</label>
+        <div class="col-12 col-md-6 t-form">
+            <label for="description">Опис</label>
             <textarea v-model="tournament.description" rows="8" id="description"></textarea>
         </div>
         <div class="w-100"></div>
-        <div class="col-6">
+        <div class="col-12 col-md-6">
             <div class="row">
                 <div class="col-auto radio-group">
                     <input v-model="teamsCount" id="t2" type="radio" value="2">
@@ -55,7 +55,7 @@
             </div>
         </div>
         <div class="w-100"></div>
-        <div class="col-6">
+        <div class="col-12 col-md-6">
             <div class="row">
                 <div class="col-12 t-form" v-for="(team, index) in tournament.tournamentTeams">
                     <label :for="'team' + index">Команда {{index+1}}</label>
@@ -63,9 +63,9 @@
                 </div>
             </div>
         </div>
-        <div class="col-12">
+        <div class="col-12 mt-4">
             <div class="row justify-content-center">
-                <button type="submit" class="col-auto">Відправити форму</button>
+                <button type="submit" class="col-12 col-md-auto t-btn t-btn-primary">Відправити форму</button>
             </div>
         </div>
     </form>

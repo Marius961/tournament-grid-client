@@ -7,14 +7,14 @@
       margin-top: 46.6666666667px;
       margin-bottom: 46.6666666667px; }
     .grid-2 .stage:nth-child(3) .match {
-      margin-top: 128.8px;
-      margin-bottom: 128.8px; }
+      margin-top: 128.1px;
+      margin-bottom: 128.1px; }
     .grid-2 .stage:nth-child(4) .match {
-      margin-top: 294px;
-      margin-bottom: 294px; }
+      margin-top: 291.2px;
+      margin-bottom: 291.2px; }
     .grid-2 .stage:nth-child(5) .match {
-      margin-top: 588px;
-      margin-bottom: 588px; }
+      margin-top: 616px;
+      margin-bottom: 616px; }
     .grid-2 .stage .match {
       position: relative;
       margin-top: 6px;
@@ -24,8 +24,7 @@
       padding-right: 15px;
       padding-left: 15px;
       background: black;
-      border-bottom: 1px solid #b4b4b4;
-      overflow: hidden; }
+      border-bottom: 1px solid #b4b4b4; }
       .grid-2 .stage .match .result, .grid-2 .stage .match .result:disabled {
         background: #2f2f2f;
         text-align: center;

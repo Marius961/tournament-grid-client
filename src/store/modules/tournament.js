@@ -17,6 +17,17 @@ export default {
                     })
             })
         },
+        deleteTournament(context, tournamentId) {
+            return new Promise((resolve, reject) => {
+                $http.delete('/api/tournaments/' + tournamentId, getBaseAuthConfig())
+                    .then(() => {
+                        resolve();
+                    })
+                    .catch(() => {
+                        reject();
+                    })
+            })
+        },
         getTournaments(context, query) {
             return new Promise((resolve, reject) => {
                 $http.get("/api/tournaments", {params: query})
