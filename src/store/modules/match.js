@@ -6,9 +6,9 @@ export default {
         user: JSON.parse(localStorage.getItem('user'))
     },
     actions: {
-        postTournament(context, tournament) {
+        postMatchResult(context, result) {
             return new Promise((resolve, reject) => {
-                $http.post('/api/tournaments', tournament, getBaseAuthConfig())
+                $http.post('/api/matches/set-winner', null, {params : result, ...getBaseAuthConfig()})
                     .then(() => {
                         resolve();
                     })
@@ -17,14 +17,14 @@ export default {
                     })
             })
         },
-        getTournaments(context, query) {
+        getMatch(context, id) {
             return new Promise((resolve, reject) => {
-                $http.get("/api/tournaments", {params: query})
+                $http.get('/api/matches/' + id)
                     .then((response) => {
                         resolve(response.data);
                     })
-                    .catch((error) => {
-                        reject(error);
+                    .catch(() => {
+                        reject();
                     })
             })
         }

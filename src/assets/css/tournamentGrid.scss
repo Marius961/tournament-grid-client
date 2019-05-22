@@ -1,19 +1,95 @@
 @import "vars";
-.grid-wrapper {
-  min-width: 1000px;
-  padding: 0 26px;
-}
+$matchHeight: 95px;
+$matchHeight: 70px;
 
-.t-stage {
-  padding: 0 26px;
-}
 
-.t-match {
-  background: #262626;
-  margin-top: 26px;
-  margin-bottom: 6px;
-  padding: 10px 12px;
-  .team {
+.grid-2 {
+  flex-wrap: nowrap;
 
+
+
+  .stage {
+    width: 300px;
+    padding-left: 26px;
+
+
+    &:nth-child(2) {
+      .match {
+        margin-top: $matchHeight / 1.5;
+        margin-bottom: $matchHeight / 1.5;
+      }
+    }
+    &:nth-child(3) {
+      .match {
+        margin-top: $matchHeight * 1.84;
+        margin-bottom: $matchHeight * 1.84;
+      }
+    }
+
+    &:nth-child(4) {
+      .match {
+        margin-top: $matchHeight * 4.2;
+        margin-bottom: $matchHeight * 4.2;
+      }
+    }
+
+    &:nth-child(5) {
+      .match {
+        margin-top: $matchHeight * 8.4;
+        margin-bottom: $matchHeight * 8.4;
+      }
+    }
+    .match {
+      position: relative;
+      margin-top: 6px;
+      margin-bottom: 6px;
+      height: $matchHeight;
+      line-height: 35px;
+      padding-right: 15px;
+      padding-left: 15px;
+      background: black;
+      border-bottom: 1px solid #b4b4b4;
+      overflow: hidden;
+
+
+      .result, .result:disabled {
+        background: #2f2f2f;
+        text-align: center;
+        width: 50px;
+        border: 0;
+        padding: 0;
+        color: white;
+
+        &:focus {
+          outline: 1px solid $accentColor;
+        }
+      }
+
+      .team-winner {
+        background: $accentColor;
+      }
+
+      .confirm-btn {
+        transition: all .18s;
+
+        position: absolute;
+        color: black;
+        background: $accentColor;
+        z-index: 999;
+        border: 0;
+        width: 40px;
+        text-align: center;
+        height: $matchHeight;
+        line-height: $matchHeight;
+        font-size: 26px;
+        right: -40px;
+
+        &:disabled {
+          background: #292929;
+          color: #9d9d9d;
+        }
+      }
+    }
   }
+
 }

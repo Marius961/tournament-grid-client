@@ -1,4 +1,3 @@
-import userHelper from "../../helpers/userHelper";
 import {$http} from "../../axiosConfig";
 import jwtHelper from "../../helpers/jwtHelper";
 
@@ -40,8 +39,10 @@ export default {
         isAuthenticated(state) {
             return state.user !== null;
         },
-        isAdmin() {
-            return userHelper.isUserHasRole("ADMIN");
+        isAdmin(state) {
+            if (state.user && state.user.roles) {
+                return state.user.roles.indexOf('ADMIN'.toUpperCase()) >= 0
+            } else return false;
         }
     }
 }

@@ -1,12 +1,55 @@
-.grid-wrapper {
-  min-width: 1000px;
-  padding: 0 26px; }
-
-.t-stage {
-  padding: 0 26px; }
-
-.t-match {
-  background: #262626;
-  margin-top: 26px;
-  margin-bottom: 6px;
-  padding: 10px 12px; }
+.grid-2 {
+  flex-wrap: nowrap; }
+  .grid-2 .stage {
+    width: 300px;
+    padding-left: 26px; }
+    .grid-2 .stage:nth-child(2) .match {
+      margin-top: 46.6666666667px;
+      margin-bottom: 46.6666666667px; }
+    .grid-2 .stage:nth-child(3) .match {
+      margin-top: 128.8px;
+      margin-bottom: 128.8px; }
+    .grid-2 .stage:nth-child(4) .match {
+      margin-top: 294px;
+      margin-bottom: 294px; }
+    .grid-2 .stage:nth-child(5) .match {
+      margin-top: 588px;
+      margin-bottom: 588px; }
+    .grid-2 .stage .match {
+      position: relative;
+      margin-top: 6px;
+      margin-bottom: 6px;
+      height: 70px;
+      line-height: 35px;
+      padding-right: 15px;
+      padding-left: 15px;
+      background: black;
+      border-bottom: 1px solid #b4b4b4;
+      overflow: hidden; }
+      .grid-2 .stage .match .result, .grid-2 .stage .match .result:disabled {
+        background: #2f2f2f;
+        text-align: center;
+        width: 50px;
+        border: 0;
+        padding: 0;
+        color: white; }
+        .grid-2 .stage .match .result:focus, .grid-2 .stage .match .result:disabled:focus {
+          outline: 1px solid #ff7324; }
+      .grid-2 .stage .match .team-winner {
+        background: #ff7324; }
+      .grid-2 .stage .match .confirm-btn {
+        transition: all .18s;
+        position: absolute;
+        color: black;
+        background: #ff7324;
+        z-index: 999;
+        border: 0;
+        width: 40px;
+        text-align: center;
+        height: 70px;
+        line-height: 70px;
+        font-size: 26px;
+        right: -40px; }
+        .grid-2 .stage .match .confirm-btn:disabled {
+          background: #292929;
+          color: #9d9d9d; }

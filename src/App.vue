@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid">
     <nav-bar></nav-bar>
-    <router-view></router-view>
+    <router-view :key="$route.fullPath"></router-view>
   </div>
 </template>
 

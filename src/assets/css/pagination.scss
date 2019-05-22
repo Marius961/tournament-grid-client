@@ -1,0 +1,36 @@
+@import "vars";
+
+.pagination {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  a {
+
+    &:first-child, &:last-child {
+      width: 100px;
+    }
+
+    border-radius: 8px;
+    margin: 0 6px;
+    background: $secondaryColor;
+    color: white;
+    width: 40px;
+    font-size: 1.4em;
+    padding: 3px;
+    text-align: center;
+
+    &:hover {
+      background: $accentColor / 1.5;
+    }
+  }
+
+  .active {
+    background: $accentColor;
+    color: white;
+
+    &:hover {
+      background: $accentColor;
+
+
+    }
+  }
+}
