@@ -5,11 +5,11 @@
         </button>
         <div class="row" style="border-bottom: 1px solid #454545">
             <div class="col" :class="{'team-winner': winnerId === match.firstTeam.team.id}">{{match.firstTeam.team.name}}</div>
-            <input :disabled="winnerId || !isAdmin" type="text" class="col-auto result" v-model="match.firstTeamResult">
+            <input :disabled="winnerId || !isAdmin" type="text" class="col-auto result" v-model="firstTeamResult">
         </div>
         <div class="row">
             <div class="col" :class="{'team-winner': winnerId === match.secondTeam.team.id}">{{match.secondTeam.team.name}}</div>
-            <input :disabled="winnerId || !isAdmin" type="text" class="col-auto result" v-model="match.secondTeamResult">
+            <input :disabled="winnerId || !isAdmin" type="text" class="col-auto result" v-model="secondTeamResult">
         </div>
     </form>
 </template>
@@ -17,28 +17,33 @@
 <script>
 
 
-    import { required, numeric } from 'vuelidate/lib/validators'
+    import { required, numeric, not, sameAs } from 'vuelidate/lib/validators'
     import {mapActions, mapGetters} from 'vuex';
 
     export default {
         computed: {
-            ...mapGetters(['isAdmin'])
+            ...mapGetters(['isAdmin']),
+            winnerId() {
+                if (this.match.winner && this.match.winner.team.id) {
+                    return this.match.winner.team.id;
+                } else {
+                    return undefined;
+                }
+            }
         },
         props: {
-            matchData: {
+            match: {
                 required: true
             }
         },
         validations: {
-            match: {
-                firstTeamResult: {required, numeric},
-                secondTeamResult: {required, numeric}
-            }
+            firstTeamResult: {required, numeric, secondTeamResult: not(sameAs('secondTeamResult'))},
+            secondTeamResult: {required, numeric}
         },
         data() {
             return {
-                winnerId: '',
-                match: {}
+                firstTeamResult: '',
+                secondTeamResult: ''
             }
         },
         methods: {
@@ -46,37 +51,26 @@
             setMatchWinner() {
                 const result = {
                     matchId: this.match.id,
-                    firstTeamResult: this.match.firstTeamResult,
-                    secondTeamResult: this.match.secondTeamResult
+                    firstTeamResult: +this.firstTeamResult,
+                    secondTeamResult: +this.secondTeamResult
                 };
+                console.log(result)
                 this.postMatchResult(result)
                     .then(() => {
-                        this.loadMatch();
+                        this.$eventBus.$emit("updateTournament", this.match.id);
                     })
                     .catch(() => {
                         alert('error')
                     })
-            },
-            loadMatch() {
-                this.getMatch(this.match.id)
-                    .then((data) => {
-                        this.match = data;
-                        this.setData();
-                    })
-            },
-            setData() {
-                if (this.match.winner && this.match.winner.team.id) {
-                    this.winnerId = this.match.winner.team.id;
-                } else {
-                    this.winnerId = undefined;
-                    this.match.firstTeamResult = '';
-                    this.match.secondTeamResult = '';
-                }
             }
         },
         created() {
-            this.match = this.matchData;
-            this.setData();
+            if (this.match.firstTeamResult > 0) {
+                this.firstTeamResult = this.match.firstTeamResult;
+            }
+            if (this.match.secondTeamResult > 0) {
+                this.secondTeamResult = this.match.secondTeamResult;
+            }
         }
     }
 </script>

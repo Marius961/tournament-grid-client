@@ -19,6 +19,9 @@
                     <i class="fas fa-sign-out-alt d-md-none"></i>
                     <span class="d-none d-md-inline">Вихід</span>
                 </router-link>
+                <router-link v-if="!isAuthenticated" to="/login" tag="div" active-class="n-link-active" class="col-auto n-link nav-action">
+                    <i class="fas fa-sign-in-alt"></i>
+                </router-link>
             </div>
         </div>
     </nav>

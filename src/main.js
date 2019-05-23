@@ -6,6 +6,7 @@ import Vuelidate from 'vuelidate'
 import vBClass from 'vue-body-class'
 import VueSweetAlert2 from 'vue-sweetalert2';
 
+Vue.prototype.$eventBus = new Vue();
 Vue.use(Vuelidate);
 
 const SwaiOptions = {

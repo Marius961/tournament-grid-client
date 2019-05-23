@@ -1,12 +1,14 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700,800&display=swap&subset=cyrillic,cyrillic-ext");
 html {
-  height: 100%; }
+  min-height: 100%;
+  position: relative; }
 
 html > body {
   background: #404040;
   color: white;
   font-family: 'Open Sans', sans-serif;
-  height: 100%; }
+  min-height: 100%;
+  position: relative; }
 
 .t-btn {
   transition: all .2s;
@@ -50,10 +52,6 @@ html > body {
   background: #aa4d18; }
 
 .h-body {
-  background-image: url("../img/bgImg.jpg");
-  background-repeat: no-repeat;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: auto;
-  background-position: center; }
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(to left bottom, #000000, #110e0f, #1c1818, #27201f, #312926, #312926, #312926, #312926, #27201f, #1c1818, #110e0f, #000000); }

@@ -5,7 +5,7 @@
                 <div class="col-auto stage" v-for="stageWithMatches in stagesWithMatches" :key="'tStage' + stageWithMatches.stage.id">
                     <div class="row no-gutters">
                         <h4 class="col-12 align-self-start">{{stageWithMatches.stage.name}}</h4>
-                        <match :match-data="match" v-for="match in stageWithMatches.matches" :key="'match' + match.id"></match>
+                        <match :match="match" v-for="match in stageWithMatches.matches" :key="'match' + match.id"></match>
                     </div>
                 </div>
             </div>
@@ -18,23 +18,8 @@
     import Match from "./Match";
 
     export default {
-        props: {
-            matches: {
-                type: Array,
-                required: true
-            },
-            teamsCount: {
-                type: Number,
-                required: true
-            }
-        },
-        data() {
-            return{
-                stagesWithMatches: []
-            }
-        },
-        methods: {
-            groupMatches() {
+        computed: {
+            stagesWithMatches() {
                 let groupedMatches = [];
 
                 const matchSort = (a, b) => +a.id + b.id;
@@ -55,14 +40,21 @@
                 const sortAsc = (a, b) => +a.stage.code - +b.stage.code;
                 groupedMatches.sort(sortAsc);
 
-                this.stagesWithMatches = groupedMatches;
+                return  groupedMatches;
+            }
+        },
+        props: {
+            matches: {
+                type: Array,
+                required: true
+            },
+            teamsCount: {
+                type: Number,
+                required: true
             }
         },
         components: {
             'match': Match
-        },
-        created() {
-            this.groupMatches();
         }
     }
 </script>

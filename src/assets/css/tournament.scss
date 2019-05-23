@@ -12,12 +12,7 @@
 .grid-wrapper {
   margin-top: 22px;
   padding-top: 18px;
-  background: #45484d;
-  background: -moz-linear-gradient(left,  #45484d 0%, #45484d 6%, #45484d 6%, #45484d 12%, #45484d 12%, #000000 100%);
-  background: -webkit-linear-gradient(left,  #45484d 0%,#45484d 6%,#45484d 6%,#45484d 12%,#45484d 12%,#000000 100%);
-  background: linear-gradient(to right,  #45484d 0%,#45484d 6%,#45484d 6%,#45484d 12%,#45484d 12%,#000000 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', endColorstr='#000000',GradientType=1 );
-
+  background-image: linear-gradient(to left bottom, #000000, #110e0f, #1c1818, #27201f, #312926, #312926, #312926, #312926, #27201f, #1c1818, #110e0f, #000000);
 }
 @media all and (max-width: 568px){
   .tournament {
