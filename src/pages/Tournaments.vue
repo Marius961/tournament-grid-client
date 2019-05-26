@@ -60,28 +60,28 @@
                 const index = this.tournaments.findIndex(el => el.id === id);
                 this.tournaments.splice(index, 1);
             },
+            updateTournamentData(updateTournamentId, index) {
+                this.getTournament(updateTournamentId)
+                    .then((data) => {
+                        this.tournaments.splice(index, 1, data);
+                    })
+                    .catch(() => {
+                        alert('error')
+                    })
+            },
             updateTournament(id) {
-                let updateTournamentId;
-                let updateTournamentIndex;
                 this.tournaments.map((el, index) => {
                     const matchIndex = el.matches.findIndex(m => m.id === id);
                     if (matchIndex > -1) {
                         const match = el.matches[matchIndex];
                         if (el.matches.includes(match)) {
-                            updateTournamentId = el.id;
-                            updateTournamentIndex = index;
+                            this.updateTournamentData(el.id, index);
                             return false;
                         }
                     }
                 });
 
-                this.getTournament(updateTournamentId)
-                    .then((data) => {
-                        this.tournaments.splice(updateTournamentIndex, 1, data);
-                    })
-                    .catch(() => {
-                        alert('error')
-                    })
+
             }
         },
         created() {
