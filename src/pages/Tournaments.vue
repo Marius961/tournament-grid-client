@@ -50,7 +50,17 @@
                         this.setPagination(this.pageData);
                     })
                     .catch(() => {
-                        alert("loading error")
+                        this.$swal({
+                            title: 'Невдалось завантажити турніри',
+                            type: 'error',
+                            toast: true,
+                            position: 'top',
+                            confirmButtonText: 'Спробувати щераз'
+                        }).then((result) => {
+                            if (result.value) {
+                                this.loadTournamentsList();
+                            }
+                        });
                     })
             },
             setPagination(pageData) {

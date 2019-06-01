@@ -28,6 +28,34 @@
     width: auto;
     display: inline;
   }
+
+  input {
+    display: none;
+  }
+
+  label {
+    margin: 4px 0;
+    display: flex;
+    height: 64px;
+    width: 80px;
+    line-height: 64px;
+    justify-content: center;
+    font-size: 20px;
+    padding: 0;
+    background: $secondaryColor;
+    border: 2px solid $accentColor;
+    border-radius: 16px;
+
+    &:hover {
+      background: $secondaryColor * 1.5;
+      cursor: pointer;
+      user-select: none;
+    }
+  }
+
+  input:checked ~ label {
+    background: $accentColor;
+  }
 }
 
 ::-webkit-inner-spin-button { display: none; }

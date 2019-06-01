@@ -83,13 +83,43 @@
                 return new Date(timestamp).toLocaleString();
             },
             submitDeleting(id) {
-                this.deleteTournament(id)
-                    .then(() => {
-                        this.$emit("deleteTournament", id);
-                    })
-                    .catch(() => {
-                        alert('error');
-                    })
+                this.$swal({
+                    title: 'Ви впевнені?',
+                    text: "Ви намагаєтесь видалити турнір, дані не можливо буде відновити!",
+                    type: 'warning',
+                    showCancelButton: true,
+                    confirmButtonText: 'Видалити турнір',
+                    cancelButtonText: 'Не видаляти',
+                    reverseButtons: true,
+                    focusConfirm: false
+                }).then((result) => {
+                    if (result.value) {
+                        this.deleteTournament(id)
+                            .then(() => {
+                                this.$emit("deleteTournament", id);
+                                this.$swal({
+                                    title: 'Видалено',
+                                    type: 'success',
+                                    timer: 1500,
+                                    showConfirmButton: false
+                                })
+                            })
+                            .catch(() => {
+                                this.$swal({
+                                    title: 'Сталась помилка підчас видалення',
+                                    text: "Невдалось видалити турнір. Спробувати щераз?",
+                                    type: 'error',
+                                    showCancelButton: true,
+                                    confirmButtonText: 'Повторити спробу',
+                                    cancelButtonText: 'Скасувати'
+                                }).then((result) => {
+                                    if (result.value) {
+                                        this.submitDeleting(id);
+                                    }
+                                });
+                            })
+                    }
+                });
             }
         }
     }

@@ -3,7 +3,10 @@
         <div class="col-12 col-md-4">
             <div class="row no-gutters">
                 <h1 class="col-12 m-0 text-center">Вхід</h1>
-                <div class="col-12 t-form">
+                <div class="col-12 error-message mt-2" v-if="isError">
+                    Неправильний логін або пароль
+                </div>
+                <div class="col-12 t-form mt-0">
                     <label for="username"></label>
                     <input v-model="$v.user.username.$model" type="text" id="username">
                 </div>
@@ -25,6 +28,7 @@
     export default {
         data() {
             return {
+                isError: false,
                 user: {
                     username: '',
                     password: ''
@@ -46,7 +50,8 @@
                             this.$router.push("/")
                         })
                         .catch(() => {
-
+                            this.user.password = '';
+                            this.isError = true;
                         })
                 }
             }

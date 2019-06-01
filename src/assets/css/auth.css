@@ -1,2 +1,7 @@
 .auth-form {
   padding-top: 120px; }
+
+.error-message {
+  background: #8f0000;
+  color: white;
+  padding: 7px 16px; }

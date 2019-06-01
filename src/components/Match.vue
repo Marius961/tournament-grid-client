@@ -58,9 +58,23 @@
                 this.postMatchResult(result)
                     .then(() => {
                         this.$eventBus.$emit("updateTournament", this.match.id);
+                        this.$swal({
+                            title: 'Збережено',
+                            timer: 1000,
+                            type: 'success',
+                            toast: true,
+                            position: 'top',
+                            showConfirmButton: false
+                        });
                     })
-                    .catch(() => {
-                        alert('error')
+                    .catch((error) => {
+                        this.$eventBus.$emit("updateTournament", this.match.id);
+                        this.$swal({
+                            title: 'Помилка збереження',
+                            type: 'error',
+                            text: 'Невдалось зберегти результат. Сервер повернув помилку: ' + error,
+                            confirmButtonText: 'ОК'
+                        });
                     })
             }
         },

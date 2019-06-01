@@ -26,14 +26,17 @@ const router = new Router({
             path: '/add-tournament',
             component: AddTournament,
             meta: {
-                requiresRoles: ["ADMIN"]
+                requiresRoles: ["ADMIN"],
+                bodyClass: 'h-body'
+
             }
         },
         {
             path: '/login',
             component: Login,
             meta: {
-                isAnonymousOnly: true
+                isAnonymousOnly: true,
+                bodyClass: 'h-body'
             }
         },
         {
